@@ -1,0 +1,61 @@
+<html>
+<head><title>Hello</title></head>
+<body>
+<h1>This is a header</h1>
+<p>
+This is normal text and <strong>this is bold-faced text</strong>.
+</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Piet_Program_Hello_World(1).gif"
+alt="This is an illustration"> 
+<p>
+The image above will be entirely skipped in the plain-text output, as
+will the JavaScript below.
+</p>
+<div id="output"></div>
+<script type="text/javascript">
+var twoStepsBack = 0;
+var oneStepBack = 1;
+for (i = 0; i < 50; i++) {
+   fibonacci = oneStepBack + twoStepsBack;
+   document.getElementById("output").innerHTML += fibonacci + "<br>";
+   twoStepsBack = oneStepBack;
+   oneStepBack = fibonacci;
+}
+</script>
+<form action="ejemplo.php" method="get">
+  <p>Nombre: <input type="text" name="nombre" size="40"></p>
+  <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
+  <p>Sexo:
+    <input type="radio" name="hm" value="h"> Hombre
+    <input type="radio" name="hm" value="m"> Mujer
+  </p>
+  <p>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+  </p>
+</form>
+<table class="default">
+
+  <tr>
+
+    <td>Celda 1</td>
+
+    <td>Celda 2</td>
+
+    <td>Celda 3</td>
+
+  </tr>
+
+  <tr>
+
+    <td>Celda 4</td>
+
+    <td>Celda 5</td>
+
+    <td>Celda 6</td>
+
+  </tr>
+
+</table>
+</body>
+</html>
