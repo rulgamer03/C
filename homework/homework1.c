@@ -82,7 +82,8 @@ int main() {
   return 0;
 }
 
-int saca() { // Function that give us the line
+int saca() { // Function that give us the line, modification of a SATU ELISA SCHAEFFER  code Longest2.c nocomment.c
+          
   extern char linea[];
   int c, i = 0;
 
