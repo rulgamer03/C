@@ -15,7 +15,7 @@ void binary(int j)
     char 1 byte (8 bits)
     int 2 bytes (16 bits)
     */
-    unsigned int contador = 256 ; // 2^(n-1) maximo 32768
+    unsigned int contador = 256 ; // 2^(n-1) maximo 32768 si se quiere menos 0 a la izquierda dividir entre 2, si quiere más 0 a la derecha multiplicar por 2 
 
     for (contador; contador > 0; contador >>=1){
         if (contador & j){
