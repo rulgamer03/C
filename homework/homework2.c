@@ -16,7 +16,7 @@ void binary(int j)
     // 0 0
     while(j>0)
     {
-        // Operaciones de la libreta saco el residuo y lo pongo en la posicion, tengo que dividir el numero y aumentar la posicion
+        // Saco el residuo y lo pongo en la posicion, tengo que dividir el numero y aumentar la posicion
 	base[i]= j%2;// residuo de la division
 	j/=2; // realizamos la division
 	++i; // aumentamos en uno la posicion
