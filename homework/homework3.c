@@ -52,13 +52,6 @@ int main() {
           quotes++;
           break;
 
-      case '\`':
-          putchar(c);
-          quotes++;
-          break;
-
-
-
       default:
         if(c!='.'&&c!=':'&&c!='\?'&&c!='!'&&c!='-'&&c!=';'&&c!='_'){//quitamos la puntuacion
             if (parenthesis==TRUE||quotes==TRUE){
