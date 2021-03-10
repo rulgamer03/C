@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 
-#define MAX 80
 #define TRUE 1
 #define FALSE 0
 
