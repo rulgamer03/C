@@ -7,7 +7,7 @@ void push(double);
 double pop(void);
 int RealizoPregunta=0;
 /* reverse Polish calculator */
-/* NO PUEDE ADVERTIR AL HACER ASIGNACION FORZADA */
+
 main()
 {
     int type, letra_encontrada=0, asignacion=0, preguntar=1, numero_encontrado=0, error_en_respuesta = 0, valor_temporal_de_asignacion=0, question=0, respuesta=0; //A cada letra le corresponde un valor
