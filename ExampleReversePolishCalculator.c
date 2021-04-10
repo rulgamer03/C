@@ -6,7 +6,7 @@ int getop(char []);
 void push(double);
 double pop(void);
 /* reverse Polish calculator */
-main()
+int main()
 {
     int type;
     double op2;
@@ -41,6 +41,7 @@ main()
             break;
         }
     }
+    return 0;
 }
 
 #define MAXVAL 100
