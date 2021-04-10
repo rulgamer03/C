@@ -17,20 +17,20 @@ int main()
     int letra_encontrada=0;
     int question=0;
     int asignacion=0;
-    int numero_encontrado =0;
+    double numero_encontrado =0.0;
     int moverse=0;
     int respuesta_si=0;
     int respuesta_no=0;
     int error=0;
 
-    int abc[26]={0}; // Un arreglo de 26 espacios correspondientes a las letras del abecedario
+    double abc[26]={0}; // Un arreglo de 26 espacios correspondientes a las letras del abecedario
     int contador[26]={0}; //Cuenta cuantas asignaciones se le ha hecho a cada letra
      while ((type = getop(s)) != EOF) {
         if (moverse==0) {
         switch (tolower(type)) {
             case NUMBER:
-            push(atof(s));
             numero_encontrado = atof(s);
+            push(atof(s));
             cantidad_de_numeros++;
             break;
             case '+':
@@ -66,7 +66,7 @@ int main()
             else if (asignacion==1&&!question&&cantidad_de_numeros==1&&cantidad_de_letras==1){ // SI HAY SIGNO DE = NO HAY DE :  DEBE PREGUNTAR
             if (contador[letra_encontrada]==0){
                 abc[letra_encontrada]=numero_encontrado;
-                printf("Asignacion hecha\n");
+                printf("Assignment ready\n");
                 contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
                 // Volvemos a valores iniciales
                 asignacion=0;
@@ -84,7 +84,7 @@ int main()
             else{
 
                 moverse=1;
-                printf("Desea sobrescribir la varible\ny --> YES\nn-->NO\n");
+                printf("Would you like to rewrite the variable?\ny --> YES\nn-->NO\n");
                 pop();
                 pop();
             }
@@ -94,7 +94,7 @@ int main()
                 abc[letra_encontrada]=numero_encontrado;
                 pop();
                 pop();
-                printf("Asignacion hecha\n");
+                printf("Assignment ready\n");
                 contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
                 // Volvemos a valores iniciales
                 asignacion=0;
@@ -156,7 +156,7 @@ int main()
      if (respuesta_si==1&&respuesta_no==0&&error==0){
         abc[letra_encontrada]=numero_encontrado;
         pop();
-        printf("Asignacion hecha\n");
+        printf("Assignament ready\n");
         contador[letra_encontrada]++; //AUMENTA EL CONTADOR AL HACER UNA ASIGNACION
         // Volvemos a valores iniciales
         asignacion=0;
@@ -174,7 +174,7 @@ int main()
      }
      else if (respuesta_si==0&&respuesta_no==1&&error==0){
         pop();
-        printf("No hizo asignacion\n");
+        printf("The assign did not apply\n");
         // Volvemos a valores iniciales
         asignacion=0;
         letra_encontrada=0;
@@ -192,7 +192,7 @@ int main()
      else{
         pop();
         printf("error: Check your input\n\n");
-        printf("Desea sobrescribir la varible\ny --> YES\nn-->NO\n");
+        printf("Would you like to rewrite the variable?\ny --> YES\nn-->NO\n");
         respuesta_no=0;
         respuesta_si=0;
         error=0;
