@@ -1,9 +1,3 @@
-/* UNA VERSION  SIN RECURSIVIDAD */
-/* UNA VERSION  SIN RECURSIVIDAD */
-/* Le falta lo de los 0s */
-/* UNA VERSION  SIN RECURSIVIDAD */
-/* UNA VERSION  SIN RECURSIVIDAD */
-
 #include <stdio.h>
 #define TRUE 1 
 #define FALSE 0
@@ -13,6 +7,131 @@
 #include <time.h> /* time */
 #define MAXOP 100 /* max size of operand or operator */
 
+// -1 si perdio
+// 0 si la celda ya estaba descubierta
+// de lo contrario retorna el numero de aciertos en esta 'expedicion'
+// @TODO: quita lo del -1
+int descubrir(int** matrix, int** descubiertas, int tam, int numero_encontrado, int letra)
+{
+    if(matrix[numero_encontrado-1][letra] == -1){
+        return -1;
+    }
+    else if(descubiertas[numero_encontrado-1][letra] == 1){
+        return 0;
+    }
+    else{
+        // descubrimos una nueva casilla que no tiene bomba
+        if(matrix[numero_encontrado-1][letra] == 0){
+            // actualizar descubiertas
+            descubiertas[numero_encontrado-1][letra] = 1;
+            int resultado = 1;
+
+            // superior izq
+            {
+                int fila = numero_encontrado - 1;
+                int columna = letra - 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // izq
+            {
+                int fila = numero_encontrado;
+                int columna = letra - 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // inferior izq
+            {
+                int fila = numero_encontrado + 1;
+                int columna = letra - 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // inferior
+            {
+                int fila = numero_encontrado + 1;
+                int columna = letra;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // inferior derecha
+            {
+                int fila = numero_encontrado + 1;
+                int columna = letra + 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // derecha
+            {
+                int fila = numero_encontrado;
+                int columna = letra + 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // superior derecha
+            {
+                int fila = numero_encontrado - 1;
+                int columna = letra + 1;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            // superior
+            {
+                int fila = numero_encontrado - 1;
+                int columna = letra;
+
+                if ((fila - 1) >= 0 && (fila - 1) < tam && 
+                    columna >= 0 && columna < tam
+                ){
+                    resultado += descubrir(matrix, descubiertas, tam, fila, columna);
+                }
+            }
+
+            return resultado;
+        }
+        else{
+            // actualizar descubiertas
+            descubiertas[numero_encontrado-1][letra] = 1;
+            return 1;
+        }
+    }
+
+}
 
 int main()
 {
@@ -182,7 +301,8 @@ int main()
                  }
             }
             
-            /*showcompletematrix(matrix, tam);*/ //ESTOO SIRVE PARA HACER TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA 
+            // showcompletematrix(matrix, tam); //ESTOO SIRVE PARA HACER TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA TRAMPA 
+            // showcompletematrix(descubiertas, tam);
             printf("\nPara escribir una coordenada escribe a2 o 2a (Cambia los numeros segun la cordenada que quieras\n");
             /// EN ESTE MOMENTO SE CREO EL TABLERO COMPLETO 
             
@@ -201,142 +321,72 @@ int main()
                         contador++;
                         break;
                         case '\n':
-                        if (numero_encontrado>tam||letra>=tam){
-                            printf("\n\n Error 1: Checa tu entrada \n\n");
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;    
-                        }
-                        else if (numero_encontrado-1<tam&&letra-1<tam&&descubiertas[numero_encontrado-1][letra]!=1&&aciertos<=variable){
-                            if (contador==1&&contador_letra==1&&errores==0&&matrix[numero_encontrado-1][letra]!=-1&&numero_encontrado-1<tam&&letra-1<tam){
-                                aciertos++; //////// AQUI LE ATINASTE A ALGO QUE NO ES UNA BOMBA
-                                if (aciertos==variable){ /////LE ATINASTE Al UNICO QUE FALTABA 
-                                    printf("\n\nGANASTE\n\n");
-                                    showcompletematrix(matrix, tam);
-                                    pregunta=0;
-                                    aciertos=0;
-                                    contador_letra=0;
-                                    letra=0;
-                                    numero_encontrado=0;
-                                    contador=0;
-                                    errores=0;
-                                    // Llenamos de 0 la matrix
-            for (i = 0; i < tam; i ++){
-                matrix[i] = (int*)malloc(sizeof(int) * tam);
-                 for (j=0; j<tam; j++){
-                     matrix[i][j]=0;
-                 }
-            }
-            
-            descubiertas = (int**)malloc(sizeof(int*) * tam);
-            // Llenamos de 0 las descubiertas 
-            for (i = 0; i < tam; i ++){
-                descubiertas[i] = (int*)malloc(sizeof(int) * tam);
-                 for (j=0; j<tam; j++){
-                     descubiertas[i][j]=0;
-                 }
-            }
+                        {
+                            if(errores == 0 && contador == 1 && contador_letra == 1){
+                                printf("\n\nEntrada valida\n\n");
+                                if(numero_encontrado-1 < tam && numero_encontrado - 1 >= 0 && 
+                                    letra < tam && letra >= 0)
+                                {
+                                    int nuevos_aciertos = descubrir(matrix, descubiertas, tam, numero_encontrado, letra);
+
+                                    // caso especial, si nuevos_aciertos es -1 es porque perdimos
+                                    if(nuevos_aciertos == -1){
+                                        showcompletematrix(matrix, tam);
+                                        printf("\n\nPERDISTE!\n\n");
+
+                                        contador_letra = 0;
+                                        letra = 0;
+                                        numero_encontrado = 0;
+                                        contador = 0;
+                                        errores = 0;
+
+                                        pregunta = 0;
+                                    }
+                                    else if(nuevos_aciertos == 0){
+                                        printf("\n\nYa habias seleccionado esta casilla!\n\n");
+                                        showmatrixwhileplay(matrix, tam, descubiertas);
+                                    }
+                                    else {
+                                        aciertos += nuevos_aciertos;
+                                        if(aciertos >= tam * tam - bombas){
+                                            showcompletematrix(matrix, tam);
+                                            printf("\n\nGANASTE!\n\n");
+
+                                            contador_letra = 0;
+                                            letra = 0;
+                                            numero_encontrado = 0;
+                                            contador = 0;
+                                            errores = 0;
+
+                                            pregunta = 0;
+                                        }
+                                        else{
+                                            showmatrixwhileplay(matrix, tam, descubiertas);
+                                        }
+                                    }
                                 }
                                 else{
-                                    descubiertas[numero_encontrado-1][letra]=1; ///AQUI LE ATINASTE A ALGO QUE NO ES UNA BOMBA PERO AUN TE FALTA 
-                                    showmatrixwhileplay(matrix,tam, descubiertas); 
-                                    contador_letra=0;
-                                    letra=0;
-                                    numero_encontrado=0;
-                                    contador=0;
-                                    errores=0;
+                                    printf("\n\nError 7: coordenada fuera de rango\n\n");
                                 }
                             }
-                            else if (contador==1&&contador_letra==1&&errores==0&&matrix[numero_encontrado-1][letra]==-1&&numero_encontrado-1<tam&&letra-1<tam){
-                                printf("\n\n PERDISTE \n\n"); /// LE ATINASTE A UNA BOMBA 
-                                showcompletematrix(matrix, tam);
-                                aciertos=0;
-                                contador_letra=0;
-                                letra=0;
-                                numero_encontrado=0;
-                                contador=0;
-                                errores=0;
-                                pregunta=0;
-                                bombas=-10;
-                            }
-                            else {
-                            printf("\n\nError 2: Checa tu entrada\n\n"); //////  ESCRIBISTE MAL 
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;    
-                            }
-                        }
-                        else if (descubiertas[numero_encontrado-1][letra]!=1&&contador==1&&contador_letra==1&&errores==0&&aciertos==variable&&matrix[numero_encontrado-1][letra]==-1&&numero_encontrado-1<tam&&letra-1<tam){
-                            printf("1 Perdiste\n\n");
-                            showcompletematrix(matrix, tam);
-                            aciertos=0;
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;
-                            pregunta=0;
-                            bombas=-10;
-                        }
-                        else {
-                            if (descubiertas[numero_encontrado-1][letra]!=1){
-                        printf("\n\nError 3: Checa tu entrada\n\n"); //// ESCRIBISTE MAL
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;
-                            }
-                            else if (numero_encontrado-1<tam&&letra-1<tam){
-                            printf("\n\nError 4: Ya habia selesccionado esta opcion\n\n"); ///YA LO HABIAS descubierto
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;
-                            /*    if (numero_encontrado-1<tam&&letra-1<tam){
-                                printf("Ya habia selesccionado esta opcion\n");
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;
-                                }
-                                else if (numero_encontrado-1>=tam||letra-1>=tam){
-                                printf("2 Checa tu entrada\n");
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;    
-                                }
-                                
-                            */
-                            } // AQUI
                             else{
-                                 printf("\n\nError 5: Checa tu entrada\n\n"); //// ESCRIBISTE MAL
-                            contador_letra=0;
-                            letra=0;
-                            numero_encontrado=0;
-                            contador=0;
-                            errores=0;   
+                                printf("\n\nError 6: algun caracter no valido\n\n");
                             }
-                            
-                        }
-                        break;
+
+                            contador_letra = 0;
+                            letra = 0;
+                            numero_encontrado = 0;
+                            contador = 0;
+                            errores = 0;
+                        }break;
                         default:
                          if (type>=97&&type<=122){
-                           letra=type-97;
-                           contador_letra++;
-                             
+                            letra=type-97;
+                            contador_letra++;
                          }
                          else {
-                         printf("\n\nError 6: Checa tu entrada\n\n");
-                         errores++;
+                            printf("\n\nError 6: Checa tu entrada\n\n");
+                            errores++;
                          }
                         break;
                     
