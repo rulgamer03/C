@@ -1,3 +1,13 @@
+/*
+Como compilar el codigo?
+En el caso del compilador gdb, poner primero el archivo main.c, luego los que restan (de preferencia en este orden ya que en este orden los puse yo) getch.c getop.c calc.h matrices.c 
+Darle a run en el archivo main.c 
+Todos los archivos necesarios los encontrara en esta carpeta homework5
+Al iniciar se preguntara el numero de columnas (Sera el mismo que el de filas)
+Luego el numero de bombas
+Por ultimo la cordenada, ejemplos a5 e7 b17
+Disfruta el juego
+*/
 #include <stdio.h>
 #define TRUE 1 
 #define FALSE 0
