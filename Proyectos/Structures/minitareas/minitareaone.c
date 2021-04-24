@@ -1,3 +1,6 @@
+/*
+where A = 299.0 and B = 264.0, so that the two accounts have the same final balance.
+*/
 #include <stdio.h>
 typedef struct account {
   char* username;
