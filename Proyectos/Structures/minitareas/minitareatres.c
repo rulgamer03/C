@@ -30,7 +30,7 @@ int main(int x, char* y[]) {
         done = TRUE;
         break;
       case 'r':
-        status |= READ; // Or binario
+        status |= READ; // asignacion con Or binario
         break;
       case 'w':
         status |= WRITE;
