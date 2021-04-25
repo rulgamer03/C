@@ -11,6 +11,7 @@ r x wx
 1 4 6
 
 en wx 2 or 4 es 6 checar en una calculadora programadora
+este programa se basa en el OR EQUAL  
 --------------
 */
 
