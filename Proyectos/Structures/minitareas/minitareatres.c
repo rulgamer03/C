@@ -3,12 +3,14 @@ Provide command-line arguments (omitting the name of the executable that is impl
 r -> 1 
 w -> 2 
 x -> 4 
-
+/// otro caso 
 
 
 --------------
 r x wx
 1 4 6
+
+en wx 2 or 4 es 6 checar en una calculadora programadora
 --------------
 */
 
