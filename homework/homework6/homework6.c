@@ -55,7 +55,7 @@ void alpha(node* position) {
   }
 }
 
-void delete(node* position, char* u, char* p){/////// A la funcion eliminar le damos el usuario y la contrase
+void delete(node* position, char* u, char* p, int* n){/////// A la funcion eliminar le damos el usuario y la contrase
     //Recorremos el arbol en busca de una coincidencia con el usuario usuario u 
     // cuando encontremos una coincidencia 
     // checamos que la contraseña sea igual 
@@ -64,20 +64,15 @@ void delete(node* position, char* u, char* p){/////// A la funcion eliminar le d
     //si no checa que el usuario y la contraseña sean correctas
     if (position != NULL) {
         
-        delete (position->leftChild, u, p);
-        delete (position->rightChild, u, p);
+        delete (position->leftChild, u, p, n);
+        delete (position->rightChild, u, p, n);
         if (strcmp(position->user, u) == 0&&strcmp(position->password, p) == 0){
             position->password=NULL;
             printf("Usuario %s eliminado\n\n", u);
+            *n = 1;
         }
+        
     }
-    
-    
-
-  
-
-  
-  
 }
 
 int main() {
@@ -106,7 +101,11 @@ int main() {
           p[i]=password[i];
       }
       /// De este modo es igual usar p o password 
-      delete(tree, u, p);
+      indicador=0;
+      delete(tree, u, p, &indicador);
+      if (indicador==0){
+          printf("No se elimino\n\n");
+      }
 
       indicador=0;
     }
