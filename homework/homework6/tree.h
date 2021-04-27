@@ -13,4 +13,4 @@ int saca(); // Function that give us the line
 void get (char l[MAX],char p[MAX],char u[MAX]); /* Function that give us the user and the password and agrega gente*/
 node* insert(char* u, char* p, node* pos, int d); // Funcion añade usuario
 void alpha(node* position); // Funcion que ordena alfabeticamente
-void delete(node* position, char* u, char* p); // Funcion elimina usuario
+void delete(node* position, char* u, char* p, int* n); // Funcion elimina usuario
