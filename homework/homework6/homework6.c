@@ -90,6 +90,7 @@ int main() {
   printf("Para agregar un usuario usa: add usuario contraseña\n");
   printf("Para eliminar un usuario usa: del usuario contraseña\n");
   printf("Para ver los nombres de los usuarios acomodados alfabeticamente usa: view\n");
+  printf("Este programa toma en cuenta mayusculas y minusculas (USUARIO no es lo mismo que usuario)\n");
   printf("Asegurate que tu entrada este correcta antes de dar enter\n\n");
   while ((l = saca()) == 0) {
       contadorespacios=0;
