@@ -1,11 +1,3 @@
-/*
-¿Como compilar?
-Utilizar el compilador gdb online de preferencia
-Pegar este codigo en el main.c 
-Crear un archivo llamado tree.h
-Pegar lo que se encuentra en el archivo tree.h en esta carpeta
-Darle a run en el main.c
-*/
 #include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
@@ -63,7 +55,7 @@ void alpha(node* position) {
   }
 }
 
-void delete(node* position, char* u, char* p, int* i){/////// A la funcion eliminar le damos el usuario y la contrase
+void delete(node* position, char* u, char* p){/////// A la funcion eliminar le damos el usuario y la contrase
     //Recorremos el arbol en busca de una coincidencia con el usuario usuario u 
     // cuando encontremos una coincidencia 
     // checamos que la contraseña sea igual 
@@ -72,18 +64,14 @@ void delete(node* position, char* u, char* p, int* i){/////// A la funcion elimi
     //si no checa que el usuario y la contraseña sean correctas
     if (position != NULL) {
         
-        if (strcmp(position->user, u) == 0&&position->password==NULL){
-            
-        }
-        
-        else if (strcmp(position->user, u) == 0&&strcmp(position->password, p) == 0){
+        delete (position->leftChild, u, p);
+        delete (position->rightChild, u, p);
+        if (strcmp(position->user, u) == 0&&strcmp(position->password, p) == 0){
             position->password=NULL;
             printf("Usuario %s eliminado\n\n", u);
-            *i=1; // i = 1 por lo tanto se hizo una  asignacion 
         }
-        
-        
     }
+    
     
 
   
@@ -118,10 +106,8 @@ int main() {
           p[i]=password[i];
       }
       /// De este modo es igual usar p o password 
-      delete(tree, u, p, &indicador);
-      if (indicador!=1){//No se elimino 
-          printf("No se elimino al usuario\n\n");
-      }
+      delete(tree, u, p);
+
       indicador=0;
     }
     
@@ -194,5 +180,10 @@ void get (char l[MAX],char p[MAX],char u[MAX]){
     int longitud2 = strlen(p);
 
 }
+
+
+
+
+
 
 
