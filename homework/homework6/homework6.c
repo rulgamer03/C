@@ -134,14 +134,14 @@ int main() {
       printf ("%s %s end\n", password, user);
       printf ("%s %s end\n", p, u);*/
       /// De este modo es igual usar p o password 
-      if (strlen(password)>0){
-      n = insert(u,p, tree, 0);
+      if (strlen(password)>0&&strlen(user)>0){
+      n = insert(u,p, tree, 0); /// En este momento se crea el registro
 	  if (tree == NULL) {
 	    tree = n; // this is the root
 	    }
 	   contadorespacios=0;
       }
-      else if (strlen(password)<=0){
+      else if (strlen(password)<=0||strlen(user)<=0){
           printf ("Checa tu entrada\n\n");
       }
       }// aqui termina el add 
