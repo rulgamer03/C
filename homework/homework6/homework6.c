@@ -90,7 +90,7 @@ int main() {
   printf("Para agregar un usuario usa: add usuario contraseña\n");
   printf("Para eliminar un usuario usa: del usuario contraseña\n");
   printf("Para ver los nombres de los usuarios acomodados alfabeticamente usa: view\n");
-  printf("Asegurate que tu entrada este correcta antes de dar enter\n\n");
+  printf("Asegurate que tu entrada este correcta antes de dar enter, de lo contrario se generara un error\n\n");
   while ((l = saca()) == 0) {
       contadorespacios=0;
     for (j=0; j<MAX; j++){
@@ -133,11 +133,16 @@ int main() {
       printf ("%s %s end\n", password, user);
       printf ("%s %s end\n", p, u);*/
       /// De este modo es igual usar p o password 
+      if (strlen(password)>0){
       n = insert(u,p, tree, 0);
 	  if (tree == NULL) {
 	    tree = n; // this is the root
 	    }
-	   contadorespacios=0; 
+	   contadorespacios=0;
+      }
+      else if (strlen(password)<=0){
+          printf ("Checa tu entrada\n\n");
+      }
       }// aqui termina el add 
       
     else if (strstr(linea, "view") != NULL&&strlen(linea)==4) { // if we found  "show" we need to show
@@ -189,7 +194,5 @@ void get (char l[MAX],char p[MAX],char u[MAX]){
     int longitud2 = strlen(p);
 
 }
-
-
 
 
