@@ -3,7 +3,7 @@
 #include <stdlib.h> // malloc & free
 #include <ctype.h> // isspace & tolower
 #include "tree.h"
-//Agregue show y ahora elimina si no tiene hijos
+
 node* insert(char* u, char* p, node* pos, int d) {
   node* temp;
   if (pos == NULL) {
@@ -71,6 +71,7 @@ void delete(node* position, char* u, char* p, int* n){/////// A la funcion elimi
             if (position->leftChild == NULL && position->rightChild == NULL) { // no children
             free(position);
             printf("Usuario %s eliminado\n\n", u);
+            *n = 1;
             }
             else { ///Si tiene hijos 
             position->password=NULL;
@@ -224,3 +225,4 @@ void show(node* position, char prefix) {
   }
   return;
 }
+
