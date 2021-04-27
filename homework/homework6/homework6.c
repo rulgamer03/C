@@ -11,7 +11,7 @@ node* insert(char* u, char* p, node* pos, int d) {
     pos->user = u;
     pos->password = p;
     pos->depth = d;
-    printf("Registro hecho\n\n");
+    printf ("Se ha registrado al usuario <%s> con la contraseña <%s>\n\n", u, p);
     /*
     int strcmp(const char *cadena1, const char *cadena2);
     Devuelve 0 si las cadenas de texto son iguales (incluyendo mayúsculas y minúsculas); 
@@ -26,7 +26,7 @@ node* insert(char* u, char* p, node* pos, int d) {
       }
       else{
           pos->password = p;
-          printf("Registro hecho\n\n");
+          printf ("Se ha registrado al usuario <%s> con la contraseña <%s>\n\n", u, p);
       }
     } else if (strcmp(pos->user, u)>0) { // value is smaller     si pos->value > value
       /*printf("Registro algo menor\n\n");*/
@@ -84,14 +84,21 @@ int main() {
   char* u;//// n es el tamaño del arreglo unidimencional puede ver mas de esto en argdemo.c
   char* p;
   int indicador=0;
-  
+  int contadorespacios =0; // si cuenta 2 espacios es muy probable que hiciste bien tu entrada
+  int j;
   printf("Bienvenido\n");
   printf("Para agregar un usuario usa: add usuario contraseña\n");
   printf("Para eliminar un usuario usa: del usuario contraseña\n");
   printf("Para ver los nombres de los usuarios acomodados alfabeticamente usa: view\n\n");
   printf("Asegurate que tu entrada este correcta antes de dar enter, de lo contrario se generara un error\n");
   while ((l = saca()) == 0) {
-    if (strstr(linea, "del") != NULL&&strlen(linea)>=7) { // if we found  "del" we need to delete
+      contadorespacios=0;
+    for (j=0; j<MAX; j++){
+        if (linea[j]==' '||linea[j]=='\t'){
+            contadorespacios++;
+        }
+    }
+    if (strstr(linea, "del") != NULL&&strlen(linea)>=7&&contadorespacios==2) { // if we found  "del" we need to delete
       get(linea, password, user);
       u = (char*)malloc(sizeof(int*) * strlen(user));
       p = (char*)malloc(sizeof(int*) * strlen(password));
@@ -109,9 +116,10 @@ int main() {
       }
 
       indicador=0;
+      contadorespacios=0;
     }
     
-    else if (strstr(linea, "add") != NULL&&strlen(linea)>=7) { // if we found  "add" we need to add
+    else if (strstr(linea, "add") != NULL&&strlen(linea)>=7&&contadorespacios==2) { // if we found  "add" we need to add
       get(linea, password, user);
       u = (char*)malloc(sizeof(int*) * strlen(user));
       p = (char*)malloc(sizeof(int*) * strlen(password));
@@ -129,16 +137,17 @@ int main() {
 	  if (tree == NULL) {
 	    tree = n; // this is the root
 	    }
-	    
-	  printf ("Se ha registrado al usuario <%s> con la contraseña <%s>\n\n", u, p);
+	   contadorespacios=0; 
       }// aqui termina el add 
       
     else if (strstr(linea, "view") != NULL&&strlen(linea)==4) { // if we found  "show" we need to show
       alpha(tree);
       printf("\n\n");
+      contadorespacios=0;
     }
     else{
-        printf("Checa tu entrada\n");
+        printf("Checa tu entrada\n\n");
+        contadorespacios=0;
     }
     
     
@@ -180,9 +189,6 @@ void get (char l[MAX],char p[MAX],char u[MAX]){
     int longitud2 = strlen(p);
 
 }
-
-
-
 
 
 
