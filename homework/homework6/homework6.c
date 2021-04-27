@@ -89,8 +89,8 @@ int main() {
   printf("Bienvenido\n");
   printf("Para agregar un usuario usa: add usuario contraseña\n");
   printf("Para eliminar un usuario usa: del usuario contraseña\n");
-  printf("Para ver los nombres de los usuarios acomodados alfabeticamente usa: view\n\n");
-  printf("Asegurate que tu entrada este correcta antes de dar enter, de lo contrario se generara un error\n");
+  printf("Para ver los nombres de los usuarios acomodados alfabeticamente usa: view\n");
+  printf("Asegurate que tu entrada este correcta antes de dar enter, de lo contrario se generara un error\n\n");
   while ((l = saca()) == 0) {
       contadorespacios=0;
     for (j=0; j<MAX; j++){
