@@ -1,3 +1,4 @@
+/* USA ONLINE GDB, este archivo va en el main.c y agregas el archivo tree.h, das a run*/
 #include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
