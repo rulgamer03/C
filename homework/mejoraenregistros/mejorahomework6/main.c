@@ -36,12 +36,24 @@ void inorder(struct node* root)
 void change(struct node* root, char* u, char* p, int* f) // Root, user, password, flag if is 1 we can use eliminate function later
 {
     if (root != NULL) {
-        inorder(root->left);
+        change(root->left, u, p, f);
         if (strcmp(root->user, u)==0&&strcmp(root->password, p)==0){
          *f = 1;
           printf("Eliminado\n\n");
         }
-        inorder(root->right);
+        change(root->right, u, p, f);
+    }
+} 
+
+void find(struct node* root, char* u, int* f) // find a user
+{
+    if (root != NULL) {
+        find(root->left, u, f);
+        if (strcmp(root->user, u)==0){
+         *f = 1;
+          printf("El usuario ya estaba registrado\n\n");
+        }
+       find(root->right, u, f);
     }
 } 
 
@@ -238,7 +250,12 @@ int main()
       printf ("%s %s end\n", p, u);*/
       /// De este modo es igual usar p o password 
       if (strlen(password)>0&&strlen(user)>0){
+      //void find(struct node* root, char* u, int* f) 
+      flag=0;
+      find(root, u, &flag);
+      if (flag==0){
 	  root = insert(root, 0, u, p);
+      }
 	  contadorespacios=0;
       }
       else if (strlen(password)<=0||strlen(user)<=0){
