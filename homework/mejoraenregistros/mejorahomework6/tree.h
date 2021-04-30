@@ -12,3 +12,4 @@ struct node* insert(struct node* , int , char* , char* );
 struct node* minValueNode(struct node* );
 struct node* deleteNode(struct node* , char* );
 void get (char* ,char* ,char* );
+void find(struct node* , char* , int* ) ;
