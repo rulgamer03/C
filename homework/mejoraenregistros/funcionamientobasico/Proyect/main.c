@@ -1,3 +1,7 @@
+// C program to demonstrate
+// delete operation in binary
+// search tree
+#include <stdio.h>
 #include <string.h> // strstr
 #include <stdlib.h> // malloc & free
 #include <ctype.h> // isspace & tolower
