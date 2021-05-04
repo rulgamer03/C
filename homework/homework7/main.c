@@ -16,7 +16,7 @@ En horario.txt van 27 lineas (26 lineas que estan en mi repositorio y 1 en blanc
 
 Al decir una en blanco se debe dar un enter
 
-
+SI LO DESEA PUEDE DEJAR LOS ARCHIVOS.txt en blanco, despues tendria que registrar usuarios, hacer entradas y salidas, asi se crearian reportes
 */
 
 
