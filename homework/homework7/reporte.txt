@@ -1,0 +1,15 @@
+Reporte generado el Martes 4/5/2021
+El trabajador con el pin <6> entro a la hora: <13:46:59> el dia: <4/5/2021> trabajo 8 segundos
+El trabajador con el pin <1> entro a la hora: <13:47:10> el dia: <4/5/2021> trabajo 2 segundos
+El trabajador con el pin <3> entro a la hora: <13:47:17> el dia: <4/5/2021> trabajo 3 segundos
+El trabajador con el pin <5> entro a la hora: <13:47:24> el dia: <4/5/2021> trabajo 9 segundos
+Reporte generado el Martes 4/5/2021
+El trabajador con el pin <2> entro a la hora: <13:50:12> el dia: <4/5/2021> trabajo 6 segundos
+El trabajador con el pin <2> entro a la hora: <13:50:20> el dia: <4/5/2021> trabajo 1 segundos
+El trabajador con el pin <5> entro a la hora: <13:50:29> el dia: <4/5/2021> trabajo 3 segundos
+El trabajador con el pin <7> entro a la hora: <13:50:45> el dia: <4/5/2021> trabajo 3 segundos
+Reporte generado el Martes 4/5/2021
+El trabajador con el pin <8> entro a la hora: <21:51:59> el dia: <4/5/2021> trabajo 6 segundos
+El trabajador con el pin <9> entro a la hora: <21:51:53> el dia: <4/5/2021> trabajo 20 segundos
+Reporte generado el Martes 4/5/2021
+El trabajador con el pin <2> entro a la hora: <21:55:30> el dia: <4/5/2021> trabajo 20 segundos
