@@ -19,6 +19,7 @@ Al decir una en blanco se debe dar un enter
 SI LO DESEA PUEDE DEJAR LOS ARCHIVOS.txt en blanco, despues tendria que registrar usuarios, hacer entradas y salidas, asi se crearian reportes
 
 Al ejecutar recuerda que la opcion 4 es CERRAR EL PROGRAMA
+Si tienes alguna duda de como usar este programa en la CARPETA TUTORIALES hay imagenes .png de como usar este programa
 */
 
 
