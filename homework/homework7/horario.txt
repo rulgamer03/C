@@ -1,0 +1,26 @@
+El usuario <raul> con el pin <1> debe entrar a las: 12:20 debe trabajar durante <10 segundos> los dias:
+domingo lunes martes jueves viernes sabado 
+
+El usuario <juan> con el pin <2> debe entrar a las: 10:20 debe trabajar durante <12 segundos> los dias:
+lunes miercoles viernes 
+
+El usuario <leo> con el pin <3> debe entrar a las: 11:12 debe trabajar durante <29 segundos> los dias:
+domingo lunes martes 
+
+El usuario <angel> con el pin <4> debe entrar a las: 10:20 debe trabajar durante <19 segundos> los dias:
+lunes martes jueves viernes sabado 
+
+El usuario <adrian> con el pin <5> debe entrar a las: 10:20 debe trabajar durante <10 segundos> los dias:
+domingo lunes martes miercoles jueves viernes sabado 
+
+El usuario <pepe> con el pin <6> debe entrar a las: 10:20 debe trabajar durante <12 segundos> los dias:
+domingo lunes martes miercoles jueves viernes sabado 
+
+El usuario <maria> con el pin <7> debe entrar a las: 10:23 debe trabajar durante <3 segundos> los dias:
+domingo lunes martes miercoles jueves viernes sabado 
+
+El usuario <Salma> con el pin <8> debe entrar a las: 12:30 debe trabajar durante <12 segundos> los dias:
+domingo lunes martes miercoles jueves viernes sabado 
+
+El usuario <felipe> con el pin <9> debe entrar a las: 12:12 debe trabajar durante <12 segundos> los dias:
+domingo lunes martes miercoles jueves viernes sabado 
