@@ -4,19 +4,14 @@ TENER EN CUENTA QUE AL USAR GDB Y LA LIBRERIA TIME.h nos da un TIEMPO DIFERENTE 
 Se recomienda usar el compilador online gdb
 Este archivo va en el main.c, se crea el archivo registros.h usando Ctrl m 
 y se pone lo que esta en el repositorio con ese nombre 
-
 Con ctrl m se crea sistema.txt // entradas.txt // salidas.txt // reporte.txt // horario.txt
-
 IMPORTANTE 
 En sistema.txt van 10 lineas (9 lineas que estan en mi repositorio y 1 en blanco)
 En entradas.txt van 12 lineas (11 lineas que estan en mi repositorio y 1 en blanco)
 En salidas.txt van 12 lineas (11 lineas que estan en mi repositorio y 1 en blanco)
 En reporte.txt van 16 lineas (15 lineas que estan en mi repositorio y 1 en blanco)
 En horario.txt van 27 lineas (26 lineas que estan en mi repositorio y 1 en blanco)
-
 Al decir una en blanco se debe dar un enter
-
-
 */
 
 
@@ -48,9 +43,15 @@ int main()
         printf("Bienvenido\nEscribe\n1 Para registrar una entrada\n2 Para registrar una salida\n3 Para registrar un trabajador\n4 Cerrar el programa\n");
         scanf("%d", &opcion);
         if (opcion==1){//es entrada
-            printf("Cual es su pin?\n");
-            scanf("%d", &pintemporal);
-            if (pintemporal<=limite){
+            
+        printf("Cual es su pin?\n");
+        scanf("%d", &pintemporal);
+        
+        if (pintemporal<=0){
+            printf("Entrada no valida\n");
+        }
+        
+            else if (pintemporal<=limite){
                 ///Si se puede registrar
                 if (matrix[pintemporal-1][1]==-1){ ///quiere decir que no ha entrado
                     entradaosalida(pintemporal, 0);///estado es es 0 es entrada 1 salida
@@ -64,9 +65,15 @@ int main()
             }
         }
         else if (opcion==2){
-            printf("Cual es su pin?\n");
-            scanf("%d", &pintemporal);
-            if (pintemporal<=limite){
+            
+        printf("Cual es su pin?\n");
+        scanf("%d", &pintemporal);
+        
+        if (pintemporal<=0){
+            printf("Entrada no valida\n");
+        }
+        
+            else if (pintemporal<=limite){
                 ///Si se puede registrar
                 if (matrix[pintemporal-1][1]!=-1){  //quiere decir que ya entro alguna vez
                     entradaosalida(pintemporal, 1);///estado es es 0 es entrada 1 salida
@@ -317,5 +324,7 @@ void horario(){
     fclose(leersistema);
     fclose(escribirhorario);
 }
+
+
 
 
