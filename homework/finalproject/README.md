@@ -5,7 +5,7 @@
 
 ## Table of Contents
 * [Project plan](#Project-plan)
-* [Project plan](#Contact)
+* [Contact](#Contact)
 <!-- * [License](#license) -->
 
 ## Project plan
