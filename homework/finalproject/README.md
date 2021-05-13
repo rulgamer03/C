@@ -2,6 +2,9 @@
 >Medical software is a technological tool that focuses on improving, assisting and supporting the daily activities of the management of a health center. So I decided to do a medical software using the C programming languaje
 >
 >Link to the project [here](https://github.com/rulgamer03/C/tree/main/homework/finalproject)
+## Table of Contents
+* [Project plan](#Project plan)
+<!-- * [License](#license) -->
 
 ## 🚀 Project plan
 The tasks of my project will be:
