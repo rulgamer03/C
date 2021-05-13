@@ -10,4 +10,5 @@
 ## Project plan
 The tasks of my project will be:
 * **Patient scheduling**: To do a patient scheduling we need the **name** or the **identification number** of the patient, the **hour**, the **day**, the **doctor's office** will he/she attended (I decide to use numbers) and the **reason** (Example:  headache) and save it in a .txt file.
-* **Creating patient records**:  The program can **generate an identification number** save the name, phone number, birth date and genre, put this information in a txt file, and a txt file, with this information can make a percentage of how many men and women are registered.
+* **Creating patient records**:  The program can **generate an identification number** save the name, phone number, birth date and genre, put this information in a .txt file, and a .txt file, with this information can make a percentage of how many men and women are registered, and add this to a .txt.
+* **Creating a summary of the doctor's appointment** with this information: height (cm or m), mass (kg), temperature you give it in °C and the program convert to °F, respiratory rate (breaths per minute), respiratory rate (breaths per minute), blood pressure (mm Hg) and heart rate (beats per minute). 
