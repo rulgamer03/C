@@ -9,4 +9,5 @@
 
 ## Project plan
 The tasks of my project will be:
-* **Patient scheduling**: In order to do a patient scheduling we need the name of the patient, the hour, the day, the doctor's office will he/she attended (I decide to use numbers) and the reason (Example:  headache) and save it in a .txt file.
+* **Patient scheduling**: In order to do a patient scheduling we need the **name** or the **identification number** of the patient, the **hour**, the **day**, the **doctor's office **will he/she attended (I decide to use numbers) and the **reason** (Example:  headache) and save it in a .txt file.
+* **Creating patient records**: 
