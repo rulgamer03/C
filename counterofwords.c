@@ -1,8 +1,10 @@
 //counter words sentences between []
+
 #include <stdio.h> // printf, scanf
 #include <stdlib.h> // malloc & free
 #include <string.h>
 #define MAX 30 // max word length
+int countdiseases();
 // #define DEBUG 1
 
 typedef struct treenode {
@@ -99,11 +101,13 @@ void alpha(node* pos) {
   }
 }
 
-int main() {
+
+int countdiseases(){
   node* tree = NULL;
   FILE* general = fopen("conteo para estadisticas.txt", "r");
   char c;
-    char* word;
+  char line[MAX];
+  char* word;
     int i; //contadores
     int j;
     int k;
@@ -155,5 +159,6 @@ int main() {
   erase(tree);
   return 0;
 }
-
-
+int main() {
+    countdiseases();
+}
