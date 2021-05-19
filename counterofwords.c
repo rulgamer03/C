@@ -102,8 +102,8 @@ void alpha(node* pos) {
 int main() {
   node* tree = NULL;
   FILE* general = fopen("conteo para estadisticas.txt", "r");
-  char* c;
-  char line[MAX];
+  char c;
+  char* line[MAX];
     char* word;
     int i; //contadores
     int j;
