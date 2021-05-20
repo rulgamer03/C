@@ -125,6 +125,8 @@ The functions in this program may be used in other contexts, for example graph t
 
 5: documentation <3> (The report is fine).
 
+15 / 15
+
 ## References
 1. Kernighan, R. W. D. B. M. (2021). The C Programming Language by Brian W. Kernighan, Dennis M. Ritchie (1988) Paperback. Prentice.
 2. Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2.
