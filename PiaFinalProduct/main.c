@@ -401,7 +401,7 @@ int printfile(char* file){ //print a txt file in console
     return 0;
 }
 
-int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the id and the user are good, Return 0 if something is bad
+int search(char* file, char* id, char* nametosearch){ //Return 1 if the id and the user are good, Return 0 if something is bad
     FILE* sistema = fopen(file, "r");
     char line[MAX];
     char number[MAX];
@@ -411,7 +411,6 @@ int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the id
     int j;
     int k;
     int l;
-    int something;
     i=0;
     int nameindicador=0;
     int numberindicador=0;
@@ -427,34 +426,37 @@ int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the id
                     number[k]=line[j];
                     k++;
                 }
-                if (numberindicador==1&&line[j]=='>'){
+                if (numberindicador==1&&line[j]=='>'){ // I use like flags yo read the '<' star to save, we read '>' stop to save in case of numbers
                     number[k]='\0';
-                    something=atof(number); //Convert to number
-                    //printf("%d\n", something);
                     numberindicador=0;
                 }
                 if (line[j]=='<'){
                     numberindicador=1;
                 }
                 // Now with the name
-                if (nameindicador==1&&line[j]!=']'){
+                if (nameindicador==1&&line[j]!=']'){ // I use like flags yo read the '[' star to save, we read ']' stop to save in case of numbers
                     name[l]=line[j];
                     l++;
                 }
                 if (nameindicador==1&&line[j]==']'){
                     name[l]='\0';
-                    //printf("%s\n", name);
                     nameindicador=0;
+                    printf("%s\n", name);
                 }
                 if (line[j]=='['){
                     nameindicador=1;
                 }
-                if (strcmp(name, nametosearch)==0&&something==idtosearch){
+                
+                if (strcmp(name, nametosearch)==0&&strcmp(number, id)==0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
+                    //printf("%s\n", name);
+                    //printf("%s\n", number);
+                    //printf("%c\n", line[j]);
                     printf("The user and the id is good");
                     printf("\n");
-                    return(1);
+                    return 1;
                 }
-
+                
+                
             }
         }
         else{
@@ -607,17 +609,17 @@ void date(){
     int month;
     int year;
     int doctorsoffice; //doctorsoffice a number 
-    int id; // id of the patient 
+    char id[100]; // id of the patient 
     int continuee=0; // if continuee is 1 name and id is fine
     printf ("\nName:\n");
     saca (name); // I need to write two times the Function because sometimes obtain a \n
     saca (name);
     
     printf ("\nId:\n"); //give the id
-    scanf("%d", &id);
+    scanf("%s", id);
 
     //Return 1 if the id and the user are good, Return 0 if something is bad
-    continuee=search("registered.txt", id,  name); //search(char* file, int idtosearch, char* nametosearch)
+    continuee=search("registered.txt", id,  name); //search(char* file, char* idtosearch, char* nametosearch)
     //printf ("%d\n", continuee);
 
     if (continuee==1){ // If you can continuee
@@ -654,7 +656,7 @@ void doctor(){ // Doctors appointment
     float mass;  // kg
     float temperature; // Celcius degrees
     float bmi; //Body Mass Index/
-    int id;
+    char id[MAX];
 
     //When we read vitalsigns.txt we read a string and 2 numbers:
     char referencename[MAX];
@@ -740,7 +742,7 @@ void doctor(){ // Doctors appointment
     saca (name);
     saca (name);
     printf ("\nId:\n"); //give the id
-    scanf("%d", &id);
+    scanf("%s", id);
 
     //Return 1 if the pin and the user are good, Return 0 if something is bad
     continuee=search("registered.txt", id,  name); //search(char* file, int idtosearch, char* nametosearch)
@@ -952,4 +954,3 @@ void doctor(){ // Doctors appointment
     printf("\n");
     }
 }
-
