@@ -88,7 +88,7 @@ Now when you write a disease, the program write it in a txt file "counting for s
 ![](https://github.com/rulgamer03/C/blob/main/PiaFinalProduct/graph.png?raw=true)
 
 
-**Image 1: ** graphstatistics.txt
+**Image 1:** graphstatistics.txt
 
 >
 >textstatistics.txt
