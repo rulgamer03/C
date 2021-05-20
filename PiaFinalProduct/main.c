@@ -3,22 +3,22 @@
     Angel Raul Chavez Carrillo
     Mechatronic Engineer
     FIME
+
+    How to use?
+    Compile at the same time the main.c and header.h
+    You don't need to make any txt file, the program will do it
+    First register a patient, the program give a id to the patient (option 3)
+    Set a date the program check the user and the id (option 4)
+    Use option 4 at a moment of a doctors appointment, the program check the user and the id, generate a file with the name of
+    the patient
+    Use option 5 to View a specific txt file
+    Finally option 6 to Exit 
     
     I read this book during the course
     Brian W. Kernighan y Dennis M. Ritchie: The C Programming Language, Prentice Hall PTR, 274 páginas, segunda edición, 1988. 
     
     I only use ANSI Standard Libraries
-    C reference card help me to do it 
-
-    How to use?
-    Compile at the same time the main.c and header.h
-    You don't need to make any txt file, the program will do it
-    First register a patient, the program give a pin to the patient (option 3)
-    Set a date the program check the user and the pin (option 4)
-    Use option 4 at a moment of a doctors appointment, the program check the user and the pin, generate a file with the name of
-    the patient
-    Use option 5 to View a specific txt file
-    Finally option 6 to Exit 
+    C reference card help me to do it
     
     File organization 
     ----------------------
@@ -87,7 +87,7 @@
 #define FALSE 0
 #define TRUE 1
 #define MAX 999 //Max of some array
-#define FIRSTPIN 1900000 //Number of the first pin
+#define FIRSTPIN 1900000 //Number of the first id
 #include "header.h"
 
 void erase(node* pos) { // This part is from the repository of SatuElisa https://github.com/satuelisa/C/blob/main/Ch6/wordcount.c 
@@ -463,7 +463,7 @@ int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the pi
         }
     }
     //end while
-    printf("Check the user and the pin\n");
+    printf("Check the user and the id\n");
     printf("\n");
     return 0;
 }
@@ -486,7 +486,7 @@ void registerpatient(){
     } while (genre!='F'&&genre!='M');
     FILE* input = fopen("registered.txt", "a"); //open the "file" in the mode "a"
     id = count("registered.txt")+large_number;
-    printf("\nThe pin will be <%d>\n\n", id);
+    printf("\nThe id will be <%d>\n\n", id);
     fprintf(input, "<%d> [%s] %c\n", id, name, genre);
     fclose(input); //Only create the file
 }
@@ -952,3 +952,4 @@ void doctor(){ // Doctors appointment
     printf("\n");
     }
 }
+
