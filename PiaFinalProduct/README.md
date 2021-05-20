@@ -41,7 +41,7 @@ Write what is the disease of the patient, what drugs need to consume at which ti
 >
 >Flu
 >
-- **Doctors appointment :** The program asks you the name and the id.  If he/she is not in the file "registered.txt" or you write something wrong the name or the id, you go to the menu. Now if user and pin are correct, the program asks you the height and the mass, the program calculate the Body Mass index (BMI), you write the temperature, respiratory rate, systolic blood pressure and heart rate, when you write one value, the program compare it, using **if** conditions, for example say "high temperature" if the patient temperature is greater than 37.5. If you don't like these values, you can change them in the function "configuration".
+- **Doctors appointment:** The program asks you the name and the id.  If he/she is not in the file "registered.txt" or you write something wrong the name or the id, you go to the menu. Now if user and pin are correct, the program asks you the height and the mass, the program calculate the Body Mass index (BMI), you write the temperature, respiratory rate, systolic blood pressure and heart rate, when you write one value, the program compare it, using **if** conditions, for example say "high temperature" if the patient temperature is greater than 37.5. If you don't like these values, you can change them in the function "configuration".
 These values will be printed in a text file. At the moment of the comparisons, we read this file and save these values in a array **float  information[36]** because we have 36 values in the txt file.
 
 >Angel Raul Chavez Carrillo.txt
@@ -73,7 +73,7 @@ Medicines:
 Ibuprofen 200 mg
 tablets 3 times a day
 
-- **Statistics: ** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here a example
+- **Statistics:** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here a example
 
 >Asthma
 >
