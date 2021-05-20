@@ -41,7 +41,7 @@ Write what is the disease of the patient, what medicines need to consume at whic
 >
 >Reason: 
 >
->Fiver
+>Fever
 >
 >Flu
 >
@@ -83,7 +83,7 @@ tablets 3 times a day
 >
 >Flu
 >
->Fiver
+>Fever
 >
 >X
 
@@ -100,7 +100,7 @@ Now when you write a disease, the program writes it in a txt file "counting for 
 >
 ><002>/<009> [Flu]
 >
-><003>/<009> [Fiver]
+><003>/<009> [Fever]
 
 We print the file **textstatistics.txt** in console at the end of the program.
 
