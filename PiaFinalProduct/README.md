@@ -90,6 +90,7 @@ tablets 3 times a day
 Now when you write a disease, the program writes it in a txt file "counting for statistics.txt", when you select the option **6. Exit**, the program counts each disease, to do this task I use a binary tree structure, then the program generate two txt files:
 
 ![](https://github.com/rulgamer03/C/blob/main/PiaFinalProduct/graph.png?raw=true)
+
 **Image 1: ** graphstatistics.txt
 
 
