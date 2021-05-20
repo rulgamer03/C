@@ -116,9 +116,13 @@ The functions in this program may be used in other contexts, for example graph t
 
 ## Autoevaluation
 1: complexity <3> (in comparison to the homeworks, this is pretty demanding, I use a lot of .txt files,  some basics concepts like **if**  **switch cases** **for loop**,  a **tree structure** to count the number of diseases and an array where i save some numbers).
+
 2: functionality <3> (All of the functions are good, the graphs, the registers,the patients scheudiling).
+
 3: code <3> (I do a lots of coments, the code is clear, i read a lot of times).
+
 4: storage <3> (I use files, an array and a tree structure).
+
 5: documentation <3> (The report is fine).
 
 ## References
