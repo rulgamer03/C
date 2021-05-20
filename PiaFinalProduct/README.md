@@ -1,7 +1,7 @@
 # Final Project: Medical Software / Clinic management
 >Medical software is a technological tool that focuses on improving, assisting, and supporting the daily activities of the management of a health center. So, I decided to do a medical software using the C programming language.
 >
->Link to the project (gdb online) [here](https://onlinegdb.com/xilFfkcM3).
+>Link to the project (gdb online) [here](https://onlinegdb.com/BwE6jgocj).
 >
 >Link to the project (github) [here](https://github.com/rulgamer03/C/tree/main/PiaFinalProduct).
 >
