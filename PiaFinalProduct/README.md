@@ -77,7 +77,7 @@ Medicines:
 Ibuprofen 200 mg
 tablets 3 times a day
 
-- **Statistics: ** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here an example
+- **Statistics:** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here an example
 
 >Asthma
 >
