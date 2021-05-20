@@ -441,7 +441,7 @@ int search(char* file, char* id, char* nametosearch){ //Return 1 if the id and t
                 if (nameindicador==1&&line[j]==']'){
                     name[l]='\0';
                     nameindicador=0;
-                    printf("%s\n", name);
+                    //printf("%s\n", name);
                 }
                 if (line[j]=='['){
                     nameindicador=1;
