@@ -1,4 +1,4 @@
-# Final Project: Medical Software
+# Final Project: Medical Software / Clinic management
 >Medical software is a technological tool that focuses on improving, assisting and supporting the daily activities of the management of a health center. So I decided to do a medical software using the C programming language.
 >
 >Link to the project [here](https://github.com/rulgamer03/C/tree/main/PiaFinalProduct).
@@ -7,6 +7,8 @@
 * [Project plan](#Project-plan)
 * [Contact](#Contact)
 * [Cases](#Cases)
+* [Benefits of the project](Benefits of the project)
+* [References](References)
 <!-- * [License](#license) -->
 
 ## Project plan
@@ -17,7 +19,6 @@ The tasks of my project will be:
 Write what is the disease of the patient, what drugs need to consume at which time and in what frequency. At the time that you write some information like temperature, the program prints in console if this is a normal temperature or it is a higher temperature, in a file you can write the "normal conditions" in order to change values in a faster and an easier way.
 * **Percentage of patient with each disease** At the time that you do a doctor appointment the program asks you if you want to add a disease or more than one diseases on the statistics, if you says yes the program save in a file .txt for example 10 patients of 20 patients registered have X disease, then convert to a percentage 50% in this case.
 ## Cases
-
 - **Register a patient**: The program asks you what is the name and the genre of the patient. The program generate the next file, (the id generate automatically i want to start with 1900000 but you can change it, you only need to change the value of FIRSTPIN 1900000)
 >registered.txt
 >
@@ -41,7 +42,7 @@ Write what is the disease of the patient, what drugs need to consume at which ti
 >
 >Flu
 >
-- **Doctors appointment:** The program asks you the name and the id.  If he/she is not in the file "registered.txt" or you write something wrong the name or the id, you go to the menu. Now if user and pin are correct, the program asks you the height and the mass, the program calculate the Body Mass index (BMI), you write the temperature, respiratory rate, systolic blood pressure and heart rate, when you write one value, the program compare it, using **if** conditions, for example say "high temperature" if the patient temperature is greater than 37.5. If you don't like these values, you can change them in the function "configuration".
+- **Doctors appointment :** The program asks you the name and the id.  If he/she is not in the file "registered.txt" or you write something wrong the name or the id, you go to the menu. Now if user and pin are correct, the program asks you the height and the mass, the program calculate the Body Mass index (BMI), you write the temperature, respiratory rate, systolic blood pressure and heart rate, when you write one value, the program compare it, using **if** conditions, for example say "high temperature" if the patient temperature is greater than 37.5. If you don't like these values, you can change them in the function "configuration".
 These values will be printed in a text file. At the moment of the comparisons, we read this file and save these values in a array **float  information[36]** because we have 36 values in the txt file.
 
 >Angel Raul Chavez Carrillo.txt
@@ -73,7 +74,7 @@ Medicines:
 Ibuprofen 200 mg
 tablets 3 times a day
 
-- **Statistics:** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here a example
+- **Statistics: ** When you are in a doctor's appointment, the program asks you if you want to add some disease to the statics, you can write the disease if you want and a X when you don't want. Here a example
 
 >Asthma
 >
@@ -83,14 +84,12 @@ tablets 3 times a day
 >
 >X
 
-Now when you write a disease, the program write it in a txt file "counting for statistics.txt", when you select the option **6. Exit**, the program count each disease, generate two txt files:
+Now when you write a disease, the program write it in a txt file "counting for statistics.txt", when you select the option **6. Exit**, the program count each disease, to do this task I use a binary tree structure, then the program generate two txt files:
 
 ![](https://github.com/rulgamer03/C/blob/main/PiaFinalProduct/graph.png?raw=true)
+**Image 1: ** graphstatistics.txt
 
 
-**Image 1:** graphstatistics.txt
-
->
 >textstatistics.txt
 >
 ><006>/<009> [Asthma]
@@ -103,7 +102,22 @@ We print the file **textstatistics.txt** in console at the end of the program.
 
 - **View registered patients:** We print the file **registered.txt** in console.
 
-- **View a specific txt file:** You write the name of the file that you want to see in console.
+- **View a specific txt file:** You write the name of the file that you want to see in console for example **date.txt**.
+
+##  Benefits of the project
+This program is like a beta to manage a hospital, this program may be improved using a data base. With the function that do a graph with the number of each disease, we can which is the most commun disease.
+The functions in this program may be used in others contexts, for example graph the sold products, to see which is the best selling product. The functions to write a line or multiple lines, the use of <> or [] to identify when a word begin and when end in a txt file.
+
+##References
+1. Kernighan, R. W. D. B. M. (2021). The C Programming Language by Brian W. Kernighan, Dennis M. Ritchie (1988) Paperback. Prentice.
+2. Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2.
+3. Referencia: c - strcmp - AprendeAProgramar.com. (s. f.). AprendeAProgramar. Recuperado 20 de mayo de 2021, de https://www.aprendeaprogramar.com/referencia/view.php?f=strcmp&leng=c
+4. GeeksforGeeks. (2021, 1 abril). Binary Search Tree | Set 2 (Delete). https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
+5. ASCII Table. (s. f.). ASCII Table. Recuperado 20 de mayo de 2021, de https://www.cs.cmu.edu/%7Epattis/15-1XX/common/handouts/ascii.html?fbclid=IwAR1bXZPf8WZSj-jKC3w3RLoeAS5hZJ7eVQ7mDORFZ_kzpb1ZDR-MHy1TSbo
+6. Satuelisa repository https://github.com/satuelisa/C
+
+
 
 ## Contact
 You can contact me in discord as  **rulgamer07#7096** , in **my personal profile Instagram:** [here](https://www.instagram.com/bad_ruly/) or in the page do in colaboration with my friends **Master Engineer** our Instagram [here](https://www.instagram.com/masterengineer_oficial/?hl=es-la) and our facebook [here](https://www.facebook.com/MasterEngineerOficial/?notif_id=1609219250768490&notif_t=page_fan&ref=notif).
+
