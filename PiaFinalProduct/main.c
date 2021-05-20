@@ -401,7 +401,7 @@ int printfile(char* file){ //print a txt file in console
     return 0;
 }
 
-int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the pin and the user are good, Return 0 if something is bad
+int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the id and the user are good, Return 0 if something is bad
     FILE* sistema = fopen(file, "r");
     char line[MAX];
     char number[MAX];
@@ -450,7 +450,7 @@ int search(char* file, int idtosearch, char* nametosearch){ //Return 1 if the pi
                     nameindicador=1;
                 }
                 if (strcmp(name, nametosearch)==0&&something==idtosearch){
-                    printf("The user and the pin is good");
+                    printf("The user and the id is good");
                     printf("\n");
                     return(1);
                 }
@@ -475,7 +475,7 @@ void registerpatient(){
     char name[MAX];
     char genre;
     int id;
-    int large_number=FIRSTPIN; //The first pin will be 190000
+    int large_number=FIRSTPIN; //The first id will be 190000
     printf("Name: \n");
     saca (name); //I need to write two times saca because before this function we have a scanf
     //printf("<%s>\n", name); we obtain "" if we don't write two times the function "saca"
@@ -608,7 +608,7 @@ void date(){
     int year;
     int doctorsoffice; //doctorsoffice a number 
     int id; // id of the patient 
-    int continuee=0; // if continuee is 1 pin and id is fine
+    int continuee=0; // if continuee is 1 name and id is fine
     printf ("\nName:\n");
     saca (name); // I need to write two times the Function because sometimes obtain a \n
     saca (name);
@@ -616,7 +616,7 @@ void date(){
     printf ("\nId:\n"); //give the id
     scanf("%d", &id);
 
-    //Return 1 if the pin and the user are good, Return 0 if something is bad
+    //Return 1 if the id and the user are good, Return 0 if something is bad
     continuee=search("registered.txt", id,  name); //search(char* file, int idtosearch, char* nametosearch)
     //printf ("%d\n", continuee);
 
