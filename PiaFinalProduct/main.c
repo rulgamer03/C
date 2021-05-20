@@ -3,6 +3,12 @@
     Angel Raul Chavez Carrillo
     Mechatronic Engineer
     FIME
+    
+    I read this book during the course
+    Brian W. Kernighan y Dennis M. Ritchie: The C Programming Language, Prentice Hall PTR, 274 páginas, segunda edición, 1988. 
+    
+    I only use ANSI Standard Libraries
+    C reference card help me to do it 
 
     How to use?
     Compile at the same time the main.c and header.h
