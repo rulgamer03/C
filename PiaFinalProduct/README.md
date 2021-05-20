@@ -115,9 +115,9 @@ The functions in this program may be used in other contexts, for example graph t
 ##References
 1. Kernighan, R. W. D. B. M. (2021). The C Programming Language by Brian W. Kernighan, Dennis M. Ritchie (1988) Paperback. Prentice.
 2. Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2.
-3. Referencia: c - strcmp - AprendeAProgramar.com. (s. f.). AprendeAProgramar. Recuperado 20 de mayo de 2021, de https://www.aprendeaprogramar.com/referencia/view.php?f=strcmp&leng=c
+3. Referencia: c - strcmp - AprendeAProgramar.com. (s. f.). AprendeAProgramar. May 20, 2021,  https://www.aprendeaprogramar.com/referencia/view.php?f=strcmp&leng=c
 4. GeeksforGeeks. (2021, 1 abril). Binary Search Tree | Set 2 (Delete). https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/
-5. ASCII Table. (s. f.). ASCII Table. Recuperado 20 de mayo de 2021, de https://www.cs.cmu.edu/%7Epattis/15-1XX/common/handouts/ascii.html?fbclid=IwAR1bXZPf8WZSj-jKC3w3RLoeAS5hZJ7eVQ7mDORFZ_kzpb1ZDR-MHy1TSbo
+5. ASCII Table. (s. f.). ASCII Table. May 20, 2021, https://www.cs.cmu.edu/%7Epattis/15-1XX/common/handouts/ascii.html?fbclid=IwAR1bXZPf8WZSj-jKC3w3RLoeAS5hZJ7eVQ7mDORFZ_kzpb1ZDR-MHy1TSbo
 6. Satuelisa repository https://github.com/satuelisa/C
 
 
