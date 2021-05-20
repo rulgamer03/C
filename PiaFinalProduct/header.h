@@ -13,7 +13,7 @@ void configuration(); // The program create a file vitalsigns.txt, with the norm
 int saca(char*); //In order to get a line
 void registerpatient();// Register a patient in the registered file
 int count(char* ); //count the lines
-int search(char* , int , char*); //Return 1 if the pin and the user are good, Return 0 if something is bad
+int search(char* , char* , char*); //Return 1 if the pin and the user are good, Return 0 if something is bad
 int printfile(char* ); //print a file in console
 int countdiseases();
 
