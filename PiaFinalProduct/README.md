@@ -12,6 +12,7 @@
 * [Contact](#Contact)
 * [Cases](#Cases)
 * [Benefits of the project](#Benefits-of-the-project)
+* [Autoevaluation](#Autoevaluation)
 * [References](#References)
 <!-- * [License](#license) -->
 
@@ -113,7 +114,14 @@ We print the file **textstatistics.txt** in console at the end of the program.
 This program is like a beta to manage a hospital, this program may be improved using a data base. With the function that do a graph with the number of each disease, we can which is the most common disease.
 The functions in this program may be used in other contexts, for example graph the sold products, to see which is the bestselling product. The functions to write a line or multiple lines, the use of <> or [] to identify when a word begin and when end in a txt file.
 
-##References
+## Autoevaluation
+1: complexity <3> (in comparison to the homeworks, this is pretty demanding, I use a lot of .txt files,  some basics concepts like **if**  **switch cases** **for loop**,  a **tree structure** to count the number of diseases and an array where i save some numbers).
+2: functionality <3> (All of the functions are good, the graphs, the registers,the patients scheudiling).
+3: code <3> (I do a lots of coments, the code is clear, i read a lot of times).
+4: storage <3> (I use files, an array and a tree structure).
+5: documentation <3> (The report is fine).
+
+## References
 1. Kernighan, R. W. D. B. M. (2021). The C Programming Language by Brian W. Kernighan, Dennis M. Ritchie (1988) Paperback. Prentice.
 2. Silverman, J. H. (2007, 15 Jan). The C Reference Card (ANSI). CRefCardVolume2.
 3. Referencia: c - strcmp - AprendeAProgramar.com. (s. f.). AprendeAProgramar. May 20, 2021,  https://www.aprendeaprogramar.com/referencia/view.php?f=strcmp&leng=c
