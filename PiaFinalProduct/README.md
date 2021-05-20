@@ -104,7 +104,7 @@ We print the file **textstatistics.txt** in console at the end of the program.
 
 - **View a specific txt file:** You write the name of the file that you want to see in console for example **date.txt**.
 
-##  Benefits of the project
+## Benefits of the project
 This program is like a beta to manage a hospital, this program may be improved using a data base. With the function that do a graph with the number of each disease, we can which is the most common disease.
 The functions in this program may be used in other contexts, for example graph the sold products, to see which is the bestselling product. The functions to write a line or multiple lines, the use of <> or [] to identify when a word begin and when end in a txt file.
 
