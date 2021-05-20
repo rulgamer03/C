@@ -8,7 +8,7 @@
 * [Contact](#Contact)
 * [Cases](#Cases)
 * [Benefits of the project](#Benefits of the project)
-* [References](References)
+* [References](#References)
 <!-- * [License](#license) -->
 
 ## Project plan
