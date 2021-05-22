@@ -1,3 +1,11 @@
+/* 
+En esta carpeta imagenes de como usar
+utilizar Codeblocks
+
+
+*/
+
+
 #include <stdio.h>
 #define MAX 100
 #include <string.h>
