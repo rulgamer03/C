@@ -1,0 +1,102 @@
+#include <stdio.h>
+#define MAX 100
+#include <string.h>
+/*
+El archivo imprime en el txt
+[Manzana] [Pera] [Mango] [Sandia]
+[Pera] [Mango] [Sandia]
+Cambia pera por Mango
+[Mango] [Mango] [Sandia]
+
+
+*/
+
+void delete(char* , char* );
+//Palabra a eliminar y el archivo.txt
+void delete(char* eliminar, char* file){ //Palabra a eliminar y el archivo.txt
+    FILE* sistema = fopen(file, "r");
+    FILE* temp = fopen("temporal.txt", "a");
+    char line[MAX];
+    char number[MAX];
+    char name[MAX];
+    char c;
+    int i; //contadores
+    int j;
+    int k;
+    int l;
+    i=0;
+    int nameindicador=0;
+    int numberindicador=0;
+    while ((c = fgetc(sistema)) != EOF) {
+        j=0;
+        if (c == '\n') {
+            line[i]='\0';
+            i=0;
+            k=0;
+            l=0;
+            for (j=0;j<strlen(line); j++){
+                // Now with the name
+                if (nameindicador==1&&line[j]!=']'){ // I use like flags yo read the '[' star to save, we read ']' stop to save in case of numbers
+                    name[l]=line[j];
+                    l++;
+                }
+                if (nameindicador==1&&line[j]==']'){
+                    name[l]='\0';
+                    nameindicador=0;
+                    //printf("%s\n", name);
+                }
+                if (line[j]=='['){
+                    nameindicador=1;
+                }
+                
+                if (strcmp(name, eliminar)==0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
+                    ///este lo eliminaremos
+                }
+                if (strcmp(name, eliminar)!=0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
+                    ///este no lo eliminaremos
+                    fprintf(temp, "[%s]\n", name);
+                }
+                
+            }
+        }
+        else{
+            line[i]=c;
+            i++;
+        }
+    }
+    fclose(sistema);
+    fclose(temp);
+    remove("frutasyverduras.txt");
+    int ret;
+    ret = rename("temporal.txt", file);
+	
+   if(ret == 0) {
+      printf("File renamed successfully");
+   } else {
+      printf("Error: unable to rename the file");
+   }
+}
+
+
+int main()
+{
+    char eliminar[MAX];
+    char cambiar[MAX];
+    char cambio[MAX];
+    FILE* input = fopen("frutasyverduras.txt", "w"); //open the "file" in the mode "w" con esto se creara el archivo
+    fprintf(input, "[Manzana]\n");
+    fprintf(input, "[Pera]\n");
+    fprintf(input, "[Mango]\n");
+    fprintf(input, "[Sandia]\n");
+    fclose(input); //con esto se creara el archivo
+    printf("Palabra a eiminar?\n");
+    scanf("%s", eliminar);
+    delete(eliminar, "frutasyverduras.txt");
+    printf("Palabra a cambiar? (cambiar, cambio)\n");
+    scanf("%s %s", cambiar, cambio); //Pera Mango en el ejemplo
+    
+    printf("<%s> <%s> <%s>", eliminar, cambiar, cambio);
+
+    return 0;
+}
+
