@@ -1,4 +1,3 @@
-  
 #include <stdio.h>
 #define MAX 100
 #include <string.h>
@@ -11,6 +10,7 @@ void changed(char* , char* , char* );
 void changed (char* file, char* cambiar, char* cambio){
     FILE* sistema = fopen(file, "r");
     FILE* temp = fopen("temporal.txt", "a");
+    int flag = 0; // 0 si no se cambio // 1 si cambio
     char line[MAX];
     char number[MAX];
     char name[MAX];
@@ -45,11 +45,13 @@ void changed (char* file, char* cambiar, char* cambio){
                 }
 
                 if (strcmp(name, cambiar)==0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
-                    ///este lo cambiaremos
+                    //este lo cambiaremos
                     fprintf(temp, "[%s]\n", cambio);
+                    flag = 1;
+                    printf("Cambio realizado\n");
                 }
                 if (strcmp(name, cambiar)!=0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
-                    ///este no lo eliminaremos
+                    //este no lo cambiaremos
                     fprintf(temp, "[%s]\n", name);
                 }
 
@@ -66,10 +68,13 @@ void changed (char* file, char* cambiar, char* cambio){
     int ret;
     ret = rename("temporal.txt", file);
 
-   if(ret == 0) {
-      printf("Ready\n");
+   /*if(ret == 0) {
+      //si se renombro
    } else {
-      printf("Error: unable to rename the file");
+      //no se renombro
+   }*/
+   if (flag==0){
+    printf("No se realizo ningun cambio\n");
    }
 }
 
@@ -80,6 +85,7 @@ void deleted(char* eliminar, char* file){ //Palabra a eliminar y el archivo.txt
     char number[MAX];
     char name[MAX];
     char c;
+    int flag = 0;
     int i; //contadores
     int j;
     int k;
@@ -110,10 +116,12 @@ void deleted(char* eliminar, char* file){ //Palabra a eliminar y el archivo.txt
                 }
 
                 if (strcmp(name, eliminar)==0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
-                    ///este lo eliminaremos
+                    //este lo eliminaremos
+                    flag=1;
+                    printf("Eliminado\n");
                 }
                 if (strcmp(name, eliminar)!=0&&line[j]==']'){//the line[j]==']' is because we need to be sure that we read name and id
-                    ///este no lo eliminaremos
+                    //este no lo eliminaremos
                     fprintf(temp, "[%s]\n", name);
                 }
 
@@ -130,10 +138,14 @@ void deleted(char* eliminar, char* file){ //Palabra a eliminar y el archivo.txt
     int ret;
     ret = rename("temporal.txt", file);
 
-   if(ret == 0) {
+   /*if(ret == 0) {
       printf("Ready\n");
    } else {
       printf("Error: unable to rename the file");
+   }
+   */
+   if (flag ==0){
+    printf("No se elimino\n");
    }
 }
 
