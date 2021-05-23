@@ -9,7 +9,7 @@ int main()
 {
     char correo[MAX];
     do {
-    printf("Dame tu correo (los correos deben tener %d o mas caracteres despues de la extencion\n", LIMIT);
+    printf("Dame tu correo (los correos deben tener %d o mas caracteres antes de la extencion (@gmail.com)\n", LIMIT);
     saca(correo);
     } while (verificarcorreo(correo)==0);
 
