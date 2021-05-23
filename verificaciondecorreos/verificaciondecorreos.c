@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #define MAX 99
+#define LIMIT 6
 int verificarcorreo(char* );
 int saca(char* );
 
@@ -8,7 +9,7 @@ int main()
 {
     char correo[MAX];
     do {
-    printf("Dame tu correo\n");
+    printf("Dame tu correo (los correos deben tener %d o mas caracteres despues de la extencion\n", LIMIT);
     saca(correo);
     } while (verificarcorreo(correo)==0);
 
@@ -31,7 +32,6 @@ int verificarcorreo(char* correo) //return 1 si el correo es valido // return 0 
     int i;
     int j=0;
     int flag=0;
-    
     for (i=0; i<longitude; i++){
         if (correo[i]=='@'){
             flag=1;
@@ -48,11 +48,11 @@ int verificarcorreo(char* correo) //return 1 si el correo es valido // return 0 
         
     }
     extencion[j]='\0';
-    if (strcmp(extencion, "@gmail.com") == 0) { 
+    if (strcmp(extencion, "@gmail.com") == 0&&longitude>=strlen("@gmail.com")+LIMIT) { 
         printf("Correo valido\n\n");
         return 1;
     }
-    else if (strcmp(extencion, "@hotmail.com") == 0) { 
+    else if (strcmp(extencion, "@hotmail.com") == 0&&longitude>=strlen("@hotmail.com")+LIMIT) { 
         printf("Correo valido\n\n");
         return 1;
     }
