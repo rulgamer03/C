@@ -25,8 +25,9 @@ int main()
     ponervalores(matrix, a, b, 20.5);
     for(int i = 0; i < a; i++){
         for (int j=0; j<b; j++){
-            printf("%.2f\n", matrix[i][j]);
+            printf("%.2f ", matrix[i][j]);
         }
+        printf("\n");
     }
     printf("----------------------\n");
     /// ponervalorenlugarespecifico 
@@ -35,8 +36,9 @@ int main()
     // imprime
     for(int i = 0; i < a; i++){
         for (int j=0; j<b; j++){
-            printf("%.2f\n", matrix[i][j]);
+            printf("%.2f ", matrix[i][j]);
         }
+        printf("\n");
     }
 }
 void ponervalores (float** array , int a, int b, float numero){
