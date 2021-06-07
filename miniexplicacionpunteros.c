@@ -14,4 +14,6 @@ int main()
     *a = 200; // con esto le estoy diciendo en a (que es la direccion de x) ponme 200
     printf("%d\n", x);
     printf("%d\n", *a);
+    
+    return 0;
 }
