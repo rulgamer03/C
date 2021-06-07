@@ -32,7 +32,7 @@ int main()
     printf("----------------------\n");
     /// ponervalorenlugarespecifico 
     ponervalorenlugarespecifico(matrix, 0, 5, 120.5);
-    
+    ponervalorenlugarespecifico(matrix, 1, 6, 999.23);
     // imprime
     for(int i = 0; i < a; i++){
         for (int j=0; j<b; j++){
